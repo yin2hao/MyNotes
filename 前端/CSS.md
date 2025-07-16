@@ -275,4 +275,24 @@ div {
 <p>p标签</p>
 ```
 
-### 交集选择器】
+### 交集选择器
+交集选择器：选中同时满足多个条件的元素。<br>
+选择器写法：选择器1 选择器2 {CSS属性}，选择器之间连写，没有任何符号。<br>
+注意：如果交集选择器中有标签选择器，标签选择器必须写在最前面。
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <style>
+    p.box {
+    color: red;
+  }
+  </style>
+</head>
+<body>
+  <p class="box">p标签，使用class选择器</p>
+</body>
+</html>
+```
