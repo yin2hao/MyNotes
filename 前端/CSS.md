@@ -300,3 +300,30 @@ div {
 ### 伪类选择器
 伪类选择器：伪类表示元素状态，选中元素的某个状态设置样式。
 鼠标悬停状态：选择器:hover {CSS属性}
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <style>
+    a:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <a href="www.baidu,com">点击跳转百度</a>
+</body>
+</html>
+```
+
+### 伪类-超链接
+超链接一共有四个状态<br>
+
+| 选择器      | 作用      |
+| -------- | ------- |
+| :link    | 访问前     |
+| :visited | 访问后     |
+| :hover   | 鼠标悬停    |
+| :active  | 点击时（激活） |
