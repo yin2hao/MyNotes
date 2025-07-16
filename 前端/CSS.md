@@ -263,5 +263,16 @@ div {
 选择器写法：选择器1,选择器2,……选择器N {CSS属性}，选择器之间用`,`隔开。
 
 ```
-
+<style>
+  div,
+  span,
+  p {
+    color: red;
+  }
+</style>
+<div>div标签</div>
+<span>span标签</span>
+<p>p标签</p>
 ```
+
+### 交集选择器】
