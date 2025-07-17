@@ -544,3 +544,68 @@ background: pink url(./images/1.png) no-repeat right center/cover;
 | inline-block | 行内块 |
 | inline       | 行内  |
 
+## 结构伪类选择器
+作用：根据元素的结构关系查找元素。
+
+| 选择器            | 说明                  |
+| -------------- | ------------------- |
+| E:first-child  | 找第一个E元素             |
+| E:last-child   | 找最后一个E元素            |
+| E:nth-child(N) | 查找第N个E元素（第一个元素N值为1） |
+E是选择器
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <style>
+    li:first-child {
+      background-color: yellow;
+    }
+    li:nth-child(7) {
+      background-color: blue;
+    }
+    li:last-child {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>li 1</li>
+    <li>li 2</li>
+    <li>li 3</li>
+    <li>li 4</li>
+    <li>li 5</li>
+    <li>li 6</li>
+    <li>li 7</li>
+    <li>li 8</li>
+    <li>li 9</li>
+    <li>li 10</li>
+  </ul>
+</body>
+</html>
+```
+
+### :nth-child(公式)
+
+| 功能       | 公式        |
+| -------- | --------- |
+| 偶数标签     | 2n        |
+| 奇数标签     | 2n+1；2n-1 |
+| 5的倍数的标签  | 5n        |
+| 第五个以后的标签 | n+5       |
+| 第五个以前的标签 | -n+5      |
+
+## 伪元素选择器
+作用：创建虚拟元素（伪元素）用来摆放装饰性的内容。
+
+| 选择器       | 说明                 |
+| --------- | ------------------ |
+| E::before | 在 E 元素里面最前面添加一个伪元素 |
+| E::after  | 在 E 元素里面最后面添加一个伪元素 |
+注意点：
+* 必须设置 `content:" "`属性，用来设置伪元素的内容，如果没有内容，则引号留空即可
+* 伪元素默认是行内显示模式
+* 权重和标签选择器相同
