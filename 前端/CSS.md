@@ -384,3 +384,103 @@ $（行内样式， id 选择器个数，类选择器个数，标签选择器个
 * 从左向右依次比较选个数，同一级个数多的优先级高，如果个数相同，则向后比较
 * !important 权重最高
 * 继承权重最低
+
+## Emmet写法
+Emmet 写法：代码的简写方式，输入缩写VSCode会自动生成对应的代码。<br>
+
+### HTML
+
+| 说明     | 标签结构                                         | Emmet        |
+| ------ | -------------------------------------------- | ------------ |
+| 类选择器   | `<div class="box"></div>`                    | `标签名`.`类名`   |
+| id选择器  | `<div id="box"></div>`                       | `标签名`\#`id名` |
+| 同级标签   | `<div><p></p></div>`                         | `div`>`p`    |
+| 多个相同标签 | `<span>1</span><span>2</span><span>3</span>` | `span*3`     |
+| 有内容的标签 | `<div>内容</div>`                              | `div{内容}`    |
+
+### CSS
+CSS的简写大多为首字母，如`w`，可以加上属性值，如`w500`。
+也可以多个属性间用`+`链接，如`w500+h500+bgc`
+
+
+## 背景属性
+### 属性
+
+| 描述      | 属性                    |
+| ------- | --------------------- |
+| 背景色     | background-color      |
+| 背景图     | background-image      |
+| 背景图平铺方式 | background-repeat     |
+| 背景图位置   | background-position   |
+| 背景图缩放   | backgrond-size        |
+| 背景图固定   | background-attachment |
+| 背景复合属性  | background            |
+
+### 背景图
+网页中，使用背景图实现装饰性的图片效果。<br>
+属性名： background-image(bgi)<br>
+属性值：url（背景图URL）
+
+```
+div {
+width:400px;
+height:400px;
+background-image: url(./images/1.png);
+```
+背景图默认平铺效果，如果标签太大，会复制几分填充空白
+
+
+
+### 背景图平铺方式
+属性名：background-repeat（bgr）<br>
+属性值：
+
+| 属性值       | 效果       |
+| --------- | -------- |
+| no-repeat | 不平铺      |
+| repeat    | 平铺（默认效果） |
+| repeat-x  | 水平方向平铺   |
+| repeat-y  | 垂直方向平铺   |
+
+### 背景图位置
+属性名： background-position (bgp）
+属性值：水平方向位置 垂直方向位置
+* 关键字：
+
+| 关键字    | 位置  |
+| ------ | --- |
+| left   | 左侧  |
+| right  | 右侧  |
+| center | 居中  |
+| top    | 顶部  |
+| bottom | 底部  |
+* 坐标（数字 + px，正负都可以）
+	* 水平：正数向右；负数向左
+	* 垂直：正数向下；负数向上
+
+```
+div {
+width: 400px;
+height: 400px;
+background-color: pink;
+background-image: url(./images/l.png);
+background-repeat: no-repeat;
+background-position: center bottom;
+background-position: 50px -100px;
+background-position: 50px center;
+}
+```
+
+提示：
+* 关键字取值方式写法，可以颠倒取值顺序。
+* 可以只写一个关键字，另一个方向默认为居中；数字只写一个值表示水平方向，垂直方向为居中
+
+### 背景图缩放
+作用：设置背景图大小
+属性名：background-size (bgz)
+常用属性值：
+* 关键字
+	* cover：等比例缩放背景图片以完全覆盖背景区，可能背景图片部分看不见
+	* contain：等比例缩放背景图片以完全装入背景区，可能背景区部分空白
+* 百分比：根据盒子尺寸计算图片大小
+* 数字+单位（例如： px ）
