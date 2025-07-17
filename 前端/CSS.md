@@ -482,5 +482,65 @@ background-position: 50px center;
 * 关键字
 	* cover：等比例缩放背景图片以完全覆盖背景区，可能背景图片部分看不见
 	* contain：等比例缩放背景图片以完全装入背景区，可能背景区部分空白
-* 百分比：根据盒子尺寸计算图片大小
+* 百分比：根据盒子尺寸计算图片大小（100％图片的宽度跟盒子宽度一样，图片的高度按照图片比例等比缩放，可能超出盒子范畴）
 * 数字+单位（例如： px ）
+
+### 背景图固定
+作用：背景不会随着元素的内容滚动。<br>
+属性名：background-attachment（ bga ）<br>
+属性值： fixed
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <style>
+    body {
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+  <div>11111111111</div>
+</body>
+</html>
+```
+
+### 背景复合属性
+属性名： background（ bg ）<br>
+属性值：背景色 背景图 背景图平铺方式 背景图位置/背景图缩放 背景图固定（空格隔开各个属性值，不区分顺序）
+
+```
+div {
+width: 400px;
+height: 400px;
+background: pink url(./images/1.png) no-repeat right center/cover;
+```
+
+
+## 显示模式
+显示模式
+块级元素：
+* 独占一行
+* 宽度默认是父级的 100 ％
+* 添加宽高属性生效
+行内元素
+* 一行共存多个
+* 由内容撑开
+* 加宽高不生效
+行内块元素
+* 一行共存多个
+* 由内容撑开
+* 加宽高生效
+
+### 转换显示模式
+属性名：display
+属性值：
+
+| 属性值          | 效果  |
+| ------------ | --- |
+| block        | 块级  |
+| inline-block | 行内块 |
+| inline       | 行内  |
+
