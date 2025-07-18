@@ -609,3 +609,150 @@ E是选择器
 * 必须设置 `content:" "`属性，用来设置伪元素的内容，如果没有内容，则引号留空即可
 * 伪元素默认是行内显示模式
 * 权重和标签选择器相同
+
+## 盒子模型
+### 盒子模型-组成
+盒子模型重要组成部分：
+* 内容区域- width & height
+* 内边距 - padding （出现在内容与盒子边缘之间）
+* 边框线 - border
+* 外边距 - margin（出现在盒子外面）
+
+### 盒子模型-边框线
+属性名：border（bd）
+属性值：边框线粗细 线条样式 颜色（不区分顺序）
+常用线条样式
+
+| 属性值    | 线条样式 |
+| ------ | ---- |
+| soild  | 实线   |
+| dashed | 虚线   |
+| dotted | 点线   |
+
+
+#### 设置单方向边框线
+属性名： border-方位名词（ bd + 方位名词首字母，例如，bdl）
+属性值：边框线粗细线条样式颜色（不区分顺序）
+
+```
+div {
+	border-top: 2px solid red;
+	border-right: 3px dashed green;
+	border-bottom: 4px dotted blue;
+	border-left: 5px solid orange;
+	
+	width: 200px;
+	height:200px;
+	background-color: pink;
+}
+```
+
+
+### 盒子模型-内边距
+作用：设置内容与盒子边缘之间的距离。
+属性名： padding/padding-方位名词
+
+```
+div {
+padding: 3epx;
+
+padding-top: 10px;
+padding-right: 20px;
+padding-bottom: 40px;
+padding-left: 80px;
+width: 200px;
+height: 200px;
+background-color: pink;
+```
+
+#### 盒子模型-内边距-多值写法
+
+| 取值个数 | 示例                             | 含义                          |
+| ---- | ------------------------------ | --------------------------- |
+| 一个值  | `padding: 10px`                | 四个方向内边距均为 10p×              |
+| 四个值  | `padding: 10px 20px 40px 80px` | 上:10px；右：20px；下：40px；左：80px |
+| 三个值  | `padding: 10px 40px 80px`      | 上：10px；左右：40px；下：80px       |
+| 两个值  | `padding: 10px 80px`           | 上下：10px；左右：80px             |
+
+### 盒子模型-尺寸计算
+* 默认情况
+	盒子尺寸=内容尺寸 + border尺寸+内边距尺寸
+* 结论：给盒子加 border / padding 会撑大盒子
+* 解决
+	* 手动做减法，减掉border / padding 的尺寸
+	* 内减模式： box-sizing: border-box
+
+![[{7B7223A5-95EB-4979-B528-B166937B0AD8}.png]]
+
+
+### 盒子模型-外边距
+作用：拉开两个盒子之间的距离
+属性名：margin
+提示：与padding属性值写法、含义相同
+
+margin 设置为auto时，能让元素在父容器中水平居中
+
+
+### 盒子模型-元素溢出
+作用：控制溢出元素的内容的显示方式。
+属性名： overflow
+属性值：
+
+| 属性值    | 效果                    |
+| ------ | --------------------- |
+| hidden | 溢出隐藏                  |
+| scroll | 溢出滚动（无论是否溢出，都显示滚动条位置） |
+| auto   | 溢出滚动（溢出才显示滚动条位置）      |
+
+### 外边距问题-合并现象
+场景：垂直排列的兄弟元素，上下margin会合并
+现象：取两个margin中的较大值生效
+
+```
+.one {
+margin-bottom: 50px;
+}
+.two {
+margin-top: 20px;
+}
+```
+
+### 外边距问题-塌陷问题
+场景：父子级的标签，子级的添加上外边距会产生塌陷问题
+现象：导致父级一起向下移动
+
+```
+.son {
+margin-top: 50px;
+width: 100px;
+height: 100px;
+background-color: orange;
+}
+```
+
+解决方法：
+* 取消子级 margin，父级设置 `padding`
+* 父级设置 `overflow:hidden`
+* 父级设置 `border-top`
+
+![[{51D68AFE-3FAF-4D53-A220-6C0E18592338}.png]]
+
+
+## 清除默认样式
+
+清除标签默认的样式，比如：默认的内外边距。
+方法：
+```
+* {
+  margin: 0;
+  padding: 0;
+}
+```
+
+```
+blockquot body, button, dd, dl, dt, fieldset, h4, h5, h6, hr, input, legend, li, text area, th, ul {
+      margin: 0;
+      padding: O;
+    }
+```
+
