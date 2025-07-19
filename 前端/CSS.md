@@ -426,6 +426,7 @@ div {
 width:400px;
 height:400px;
 background-image: url(./images/1.png);
+}
 ```
 背景图默认平铺效果，如果标签太大，会复制几分填充空白
 
@@ -663,6 +664,7 @@ padding-left: 80px;
 width: 200px;
 height: 200px;
 background-color: pink;
+}
 ```
 
 #### 盒子模型-内边距-多值写法
@@ -676,14 +678,48 @@ background-color: pink;
 
 ### 盒子模型-尺寸计算
 * 默认情况
-	盒子尺寸=内容尺寸 + border尺寸+内边距尺寸
+	盒子尺寸=内容尺寸 + border尺寸 + 内边距尺寸
 * 结论：给盒子加 border / padding 会撑大盒子
 * 解决
 	* 手动做减法，减掉border / padding 的尺寸
 	* 内减模式： box-sizing: border-box
 
-![[{7B7223A5-95EB-4979-B528-B166937B0AD8}.png]]
+~~代码实现先欠着~~
+尽力了，鬼知道他为什么会扭成这样
 
+
+  <div class="labels" style="position: relative;">
+    <div style="width: 400px; height: 400px; border: 1px dashed #000000; background-color: #ffcc80; display: inline-block; position: relative; box-sizing: border-box;">
+      <!-- margin 标签和虚线 -->
+      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 1.25%; left: 1.25%;">margin</div>
+      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; left: 50%; transform: translateX(-50%);">|</div>
+      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; left: 0; transform: translateY(-50%);">——</div>
+      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; right: 0; transform: translateY(-50%);">——</div>
+      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; bottom: 0; left: 50%; transform: translateX(-50%);">|</div>
+      <div style="width: 250px; height: 250px; background-color: #fff176; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
+        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #f57c00; top: 2%; left: 2%;">border</div>
+        <!-- border 数值 -->
+        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 0; left: 50%; transform: translateX(-50%);">|</div>
+        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; bottom: 0; left: 50%; transform: translateX(-50%);">|</div>
+        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; left: 0; transform: translateY(-50%);">—</div>
+        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; right: 0; transform: translateY(-50%);">—</div>
+        <div style="width: 200px; height: 200px; border: 0.8% dashed #4caf50; background-color: #c8e6c9; padding: 4%; position: relative; margin: 16% auto; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
+          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #388e3c; top: 2.5%; left: 2.5%;">padding</div>
+          <!-- padding 数值 -->
+          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 0; left: 50%; transform: translateX(-50%);">|</div>
+          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; bottom: 0; left: 50%; transform: translateX(-50%);">|</div>
+          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; left: 0; transform: translateY(-50%);">—</div>
+          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; right: 0; transform: translateY(-50%);">—</div>
+          <div style="width: 100px; height: 100px; background-color: #81c784; border: 2% solid #2e7d32; display: flex; align-items: center; justify-content: center; font-size: 1.125em; font-weight: bold; color: #1b5e20; position: relative; margin: 45% auto; box-sizing: border-box;">
+            <div style="font-size: 1em; font-weight: bold; color: #1b5e20;">200×200</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+![[屏幕截图 2025-07-18 204203.png]]
 
 ### 盒子模型-外边距
 作用：拉开两个盒子之间的距离
@@ -720,24 +756,31 @@ margin-top: 20px;
 ### 外边距问题-塌陷问题
 场景：父子级的标签，子级的添加上外边距会产生塌陷问题
 现象：导致父级一起向下移动
+现象如图（灰色为背景板方便观察）：
 
-```
-.son {
-margin-top: 50px;
-width: 100px;
-height: 100px;
-background-color: orange;
-}
-```
+<div style="background-color: gray;overflow:hidden">
+  <div style="background-color: pink; width: 200px; height: 200px; ">
+    <div style="background-color: orange; width: 100px; height: 100px; margin-top: 20px;">
+      子级div标签
+    </div>
+    父级div标签
+  </div>
+</div>
 
 解决方法：
 * 取消子级 margin，父级设置 `padding`
 * 父级设置 `overflow:hidden`
 * 父级设置 `border-top`
 
-![[{51D68AFE-3FAF-4D53-A220-6C0E18592338}.png]]
-
-
+效果如图：
+<div style="background-color: gray; overflow:hidden">
+  <div style="background-color: pink; width: 200px; height: 200px; overflow:hidden">
+    <div style="background-color: orange; width: 100px; height: 100px; margin-top: 20px;">
+      子级div标签
+    </div>
+    父级div标签
+  </div>
+</div>
 ## 清除默认样式
 
 清除标签默认的样式，比如：默认的内外边距。
@@ -756,3 +799,7 @@ blockquot body, button, dd, dl, dt, fieldset, h4, h5, h6, hr, input, legend, li,
     }
 ```
 
+
+### 行内元素-内外边距问题
+场景：行内元素添加 margin 和 padding, 无法改变元素垂直位置
+解决方法：给行内元素添加 line-height 可以改变垂直位置
