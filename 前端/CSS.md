@@ -685,33 +685,32 @@ background-color: pink;
 	* 内减模式： box-sizing: border-box
 
 ~~代码实现先欠着~~
-尽力了，鬼知道他为什么会扭成这样
+尽力了，鬼知道他为什么会扭成这样，明明VSCODE里面一切正常的
 
-
-  <div class="labels" style="position: relative;">
-    <div style="width: 400px; height: 400px; border: 1px dashed #000000; background-color: #ffcc80; display: inline-block; position: relative; box-sizing: border-box;">
+<div style="position: relative;">
+    <div style="width: 400px;height: 400px;border: 1px dashed #000000;background-color: #ffcc80;display: inline-block;position: relative;box-sizing: border-box;">
       <!-- margin 标签和虚线 -->
-      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 1.25%; left: 1.25%;">margin</div>
-      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; left: 50%; transform: translateX(-50%);">|</div>
-      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; left: 0; transform: translateY(-50%);">——</div>
-      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; right: 0; transform: translateY(-50%);">——</div>
-      <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; bottom: 0; left: 50%; transform: translateX(-50%);">|</div>
-      <div style="width: 250px; height: 250px; background-color: #fff176; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
-        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #f57c00; top: 2%; left: 2%;">border</div>
+      <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;top: 1.25%;left: 1.25%;">margin</div>
+      <div style="left: 50%; transform: translateX(-50%);position: absolute;font-size: 0.875em;font-weight: bold;color: #333;">|</div>
+      <div style="top: 50%; left: 0; transform: translateY(-50%);position: absolute;font-size: 0.875em;font-weight: bold;color: #333;">——</div>
+      <div style="top: 50%; right: 0; transform: translateY(-50%);position: absolute;font-size: 0.875em;font-weight: bold;color: #333;">——</div>
+      <div style="bottom: 0; left: 50%; transform: translateX(-50%);position: absolute;font-size: 0.875em;font-weight: bold;color: #333;">|</div>
+      <div style="width: 250px;height: 250px;background-color: #fff176;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);display: flex;align-items: center;justify-content: center;box-sizing: border-box;">
+        <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;top: 2%;left: 2%;color: #f57c00;">border</div>
         <!-- border 数值 -->
-        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 0; left: 50%; transform: translateX(-50%);">|</div>
-        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; bottom: 0; left: 50%; transform: translateX(-50%);">|</div>
-        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; left: 0; transform: translateY(-50%);">—</div>
-        <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; right: 0; transform: translateY(-50%);">—</div>
-        <div style="width: 200px; height: 200px; border: 0.8% dashed #4caf50; background-color: #c8e6c9; padding: 4%; position: relative; margin: 16% auto; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
-          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #388e3c; top: 2.5%; left: 2.5%;">padding</div>
+        <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;top: 0; left: 50%; transform: translateX(-50%);">|</div>
+        <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;bottom: 0; left: 50%; transform: translateX(-50%);">|</div>
+        <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;top: 50%; left: 0; transform: translateY(-50%);">—</div>
+        <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;top: 50%; right: 0; transform: translateY(-50%);">—</div>
+        <div style="width: 200px;height: 200px;border: 0.8% dashed #4caf50;background-color: #c8e6c9;padding: 4%;position: relative;margin: 16% auto;display: flex;align-items: center;justify-content: center;box-sizing: border-box;position: relative;">
+          <div style="top: 2.5%;left: 2.5%;color: #388e3c;position: absolute;font-size: 0.875em;font-weight: bold;color: #333;">padding</div>
           <!-- padding 数值 -->
-          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 0; left: 50%; transform: translateX(-50%);">|</div>
-          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; bottom: 0; left: 50%; transform: translateX(-50%);">|</div>
-          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; left: 0; transform: translateY(-50%);">—</div>
-          <div style="position: absolute; font-size: 0.875em; font-weight: bold; color: #333; top: 50%; right: 0; transform: translateY(-50%);">—</div>
-          <div style="width: 100px; height: 100px; background-color: #81c784; border: 2% solid #2e7d32; display: flex; align-items: center; justify-content: center; font-size: 1.125em; font-weight: bold; color: #1b5e20; position: relative; margin: 45% auto; box-sizing: border-box;">
-            <div style="font-size: 1em; font-weight: bold; color: #1b5e20;">200×200</div>
+          <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;top: 0; left: 50%; transform: translateX(-50%);">|</div>
+          <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;bottom: 0; left: 50%; transform: translateX(-50%);">|</div>
+          <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;top: 50%; left: 0; transform: translateY(-50%);">—</div>
+          <div style="position: absolute;font-size: 0.875em;font-weight: bold;color: #333;top: 50%; right: 0; transform: translateY(-50%);">—</div>
+          <div style="width: 100px;height: 100px;background-color: #81c784;border: 2% solid #2e7d32;display: flex;align-items: center;justify-content: center;font-size: 1.125em;font-weight: bold;color: #1b5e20;position: relative;margin: 45% auto;box-sizing: border-box;">
+            <div style="font-size: 1em;font-weight: bold;color: #1b5e20;">200×200</div>
           </div>
         </div>
       </div>
@@ -803,3 +802,19 @@ blockquot body, button, dd, dl, dt, fieldset, h4, h5, h6, hr, input, legend, li,
 ### 行内元素-内外边距问题
 场景：行内元素添加 margin 和 padding, 无法改变元素垂直位置
 解决方法：给行内元素添加 line-height 可以改变垂直位置
+
+
+### 盒子模型-圆角
+作用：设置元素的外边框为圆角。
+属性名： border-radius
+属性值：数字+ p×/百分比
+
+常见应用
+* 正圆形状：给正方形盒子设置圆角属性值为 宽高的一半/ 50 ％（最大值是50％。超过50％没有效果）
+* 胶囊形状：给长方形盒子设置圆角属性值为 盒子高度的一半
+
+
+### 盒子模型-阴影拓展
+作用：给元素设置阴影效果。
+属性名：box-shadow
+属性值： x 轴偏移量  Y轴偏移量  模糊半径  扩散半径  颜色  内外阴影
