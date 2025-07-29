@@ -814,7 +814,13 @@ blockquot body, button, dd, dl, dt, fieldset, h4, h5, h6, hr, input, legend, li,
 * 胶囊形状：给长方形盒子设置圆角属性值为 盒子高度的一半
 
 
-### 盒子模型-阴影拓展
+### 盒子模型-阴影（拓展）
 作用：给元素设置阴影效果。
 属性名：box-shadow
 属性值： x 轴偏移量  Y轴偏移量  模糊半径  扩散半径  颜色  内外阴影
+
+注意：
+* X轴偏移量和Y轴偏移量必须书写
+* 默认是外阴影，内阴影需要添加 inset
+## test
+git config --global --add safe.directory D:/notes/mynotes
