@@ -1000,13 +1000,13 @@ logo功能：
 实现方法：
 * 标签结构：h1 > a > 网站名称（搜索关键字）
 * CSS 样式：
-	```
-	.logo a {
-		dispaly: block;
-		width: 195px;
-		height: 41px;
-		background-image: url(../iamges/logo.png);
-		/* 隐藏文字 */
-		font-size: 0;
-	}
-	```
+```
+.logo a {
+	dispaly: block;
+	width: 195px;
+	height: 41px;
+	background-image: url(../iamges/logo.png);
+	/* 隐藏文字 */
+	font-size: 0;
+}
+```
