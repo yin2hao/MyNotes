@@ -58,8 +58,26 @@ const userAgent = navigator.userAgent
 
 
 ## 本地存储
-### LocalStorage
-以键值对的形式存储使用
+### localStorage
+特点：
+* 永久存储在本地
+* 以键值对的形式存储使用
+用法：
 * 存储数据：`localStorage.getItem(key)`
 * 获取数据：`localStorage.removeItem(key)`
 * 删除数据：`localStorage.removeItem(key)`
+
+### sessionStorage
+特点：
+* 生命周期为关闭浏览器窗口
+* 在同一个窗口(页面)下数据可以共享
+* 以键值对的形式存储使用
+* 用法跟localStorage 基本相同
+用法：
+* 存储数据：`sessionStorage.getItem(key)`
+* 获取数据：`sessionStorage.removeItem(key)`
+* 删除数据：`sessionStorage.removeItem(key)`
+
+### 存储复杂数据类型
+使用 `JSON.stringify()` 将复杂数据类型转化为JSON字符串存储
+使用 `JSON.parse()` 将JSON字符串转化回复杂数据类型
