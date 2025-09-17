@@ -33,4 +33,33 @@ href 属性获取完整的 URL 地址，对其赋值时用于地址的跳转
 hash 属性获取地址中的啥希值，符号 # 后面部分
 ### location.reload
 reload 方法用来刷新当前页面，传入参数 true 时表示强制刷新
+```
+loaction.reload()
+```
 强制刷新无视本地缓存，直接从服务器获取最新网页
+
+
+## navigator
+获取浏览器信息
+如：
+```
+// 获取浏览器UA
+const userAgent = navigator.userAgent
+```
+
+
+## history
+
+| history对象方法 | 作用                                     |
+| ----------- | -------------------------------------- |
+| back()      | 后退                                     |
+| forword()   | 前进                                     |
+| go(参数)      | 前进后退功能参数如果是 1 前进 1 个页面如果是 -1  后退 1 个页面 |
+
+
+## 本地存储
+### LocalStorage
+以键值对的形式存储使用
+* 存储数据：`localStorage.getItem(key)`
+* 获取数据：`localStorage.removeItem(key)`
+* 删除数据：`localStorage.removeItem(key)`
