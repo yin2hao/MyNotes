@@ -23,3 +23,14 @@ clearTimeout(timer)
 注意点：
 * 延时器需要等待,所以后面的代码先执行
 * 每一次调用延时器都会产生一个新的延时器
+
+## location
+### location.href
+href 属性获取完整的 URL 地址，对其赋值时用于地址的跳转
+### location.search
+ search 属性获取地址中携带的参数，符号 ？后面部分
+### location.hash
+hash 属性获取地址中的啥希值，符号 # 后面部分
+### location.reload
+reload 方法用来刷新当前页面，传入参数 true 时表示强制刷新
+强制刷新无视本地缓存，直接从服务器获取最新网页
