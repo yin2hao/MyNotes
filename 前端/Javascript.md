@@ -89,6 +89,7 @@ join() 方法用于把数组中的所有元素转换一个字符串
 
 
 ## 正则表达式
+### test方法
 test 方法用于判断是否有符合规则的字符串，返回的是布尔值找到返回 true, 否则 false
 ```
 const str = "我们在学习前端，希望学习前端能高薪毕业"
@@ -96,10 +97,16 @@ const reg = /前端/  //正则表达式式子
 console.log(reg.test(str)) //ture
 ```
 
+### exec方法
 exec 方法用于检索（查找）符合规则的字符串，找到返回数组，否则为 null
 ```
 const str = "我们在学习前端，希望学习前端能高薪毕业"
 const reg = /前端/  //正则表达式式子
 console.log(reg.test(str))
 //打印一个字符串
+```
+
+### replace
+```
+字符串.replace(/正则表达式/, 替换的文本)
 ```
