@@ -81,3 +81,8 @@ const userAgent = navigator.userAgent
 ### 存储复杂数据类型
 使用 `JSON.stringify()` 将复杂数据类型转化为JSON字符串存储
 使用 `JSON.parse()` 将JSON字符串转化回复杂数据类型
+
+
+## map和join
+map() 可以处理数据，并且返回新的数组
+join() 方法用于把数组中的所有元素转换一个字符串
