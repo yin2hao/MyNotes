@@ -119,18 +119,18 @@
 
 ## 字体修饰属性
 
-| 描述     | 属性              | 效果                                                                                       |
-| ------ | --------------- | ---------------------------------------------------------------------------------------- |
-| 字体大小   | font-size       | 文字 &  <font size=5>文字                                                                    |
-| 字体粗细   | font-weight     | 文字 & <b>文字</b>                                                                           |
-| 字体倾斜   | font-style      | 文字 & * 文字 *                                                                              |
-| 行高     | line-height     | <p style="line-height: 80px;">行高为80px的段落</p><p style="line-height: 80px;">行高为80px的段落</p> |
-| 字体族    | font-family     | 文字 & 文字                                                                                  |
-| 字体复合属性 | font            | 复合属性                                                                                     |
-| 文本缩进   | text-indent     | <p style="text-indent: 2em;">玉兰颇受明清时期文人的欢迎，尤其在明代万历年间，玉兰被大量种植。</p>                        |
-| 文本对齐   | text-align      | <p text-align>对齐方式</p>                                                                   |
-| 修饰线    | text-decoration | 文字 & <u>文字</u> & ~~文字~~ & <p text-decoration文字                                           |
-| 颜色     | color           | 文字 & <font color=red>文字                                                                  |
+| 描述     | 属性              | 效果                                                                                                     |
+| ------ | --------------- | ------------------------------------------------------------------------------------------------------ |
+| 字体大小   | font-size       | 文字 &  <font size=5>文字                                                                                  |
+| 字体粗细   | font-weight     | 文字 & <b>文字</b>                                                                                         |
+| 字体倾斜   | font-style      | 文字 & * 文字 *                                                                                            |
+| 行高     | line-height     | <p style="line-height: 80px;">行高为80px的段落</p><p style="line-height: 80px;">行高为80px的段落</p>               |
+| 字体族    | font-family     | 文字 & 文字                                                                                                |
+| 字体复合属性 | font            | 复合属性                                                                                                   |
+| 文本缩进   | text-indent     | <p style="text-indent: 2em;">玉兰颇受明清时期文人的欢迎，尤其在明代万历年间，玉兰被大量种植。</p>                                      |
+| 文本对齐   | text-align      | <p style="text-align:center">对齐方式</p>                                                                  |
+| 修饰线    | text-decoration | 文字 & <p style="text-decoration:underline">文字</p> & ~~文字~~ & <p style="text-decoration:overline">文字</p> |
+| 颜色     | color           | 文字 & <font color=red>文字                                                                                |
 
 
 ### 行高
@@ -1097,3 +1097,35 @@ CSS 精灵，也叫 CSS Sprites，是一种网页图片应用处理方式。把�
 | `top`      | 顶部对齐     |
 | `middle`   | 居中对齐     |
 | `bottom`   | 底部对齐     |
+
+## CSS标签的行级展示
+
+block(块级)：
+* 结构类元素:
+	* `div`
+	* `header`
+	* `footer`
+	* `main`
+	* `section`
+	* `article`
+	* `aside`
+	* `nav`
+* 文本类元素:
+	* `h1-h6`
+	* `p`
+	* `blockquete`
+	* `pre`
+	* `ul`
+	* `ol`
+	* `li`
+	* `dl`
+	* `dt`
+	* `dd`
+* 其他元素：
+	* `hr`
+	* `table`
+	* `form`
+	* `canvas`
+	* `video`
+	* `audio`
+块级元素可以使用`text-align`调整位置
