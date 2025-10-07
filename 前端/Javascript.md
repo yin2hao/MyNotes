@@ -199,8 +199,15 @@ console.log(b)
 console.log(c)
 ```
 
-基本语法：
-3. 交互2个变量
+**注意**：变量多，单元值少的情况：
+```
+const [a, b, c, d] = ['小米', '苹果', '华为']
+console.log(a) // 小米
+console.log(b) // 苹果
+console.log(c) // 华为
+console.log(d) // undefined
+```
+3. 交互2个变量   
 ```
 let c = 1
 let d = 3; //这里必须有分号
@@ -209,7 +216,7 @@ console.log(a)
 console.log(b)
 ```
 
-注意： js 前面必须加分号情况
+**注意**：js 前面必须加分号情况
 1. 立即执行函数
 	```
 	(function t() { })();
