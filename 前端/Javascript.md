@@ -256,5 +256,51 @@ console.log(a) // 苹果
 console.log(b) // ['小米','华为']
 ```
 ```
+const [a,[b,c]] = ['苹果'， ['小米','华为']]
+console.log(a) // 苹果
+console.log(b) // 小米
+console.log(c) // 华为
+```
 
+### 对象解构
+对象解构是将对象属性和方法快速批量赋值给一系列变量的简洁语法
+
+* 基本语法：
+1. 赋值运算符 = 左侧的 {} 用于批量声明变量，右侧对象的属性值将被赋值给左侧的变量
+2. 对象属性的值将被赋值给与属性名相同的变量
+3. 注意解构的变量名不要和外面的变量名冲突否则报错
+4. 对象中找不到与变量名一致的属性时变量值为 undefined
+```
+const user = {
+	name: '小明',
+	age: 18
+};
+const {name, age} = user
+
+console.log(name) // 小明
+console.log(age) // 18
+```
+
+* 给新的变量名赋值：可以从一个对象中提取变量并同时修改新的变量名
+```
+const user = {
+	name: '小明',
+	age: 18
+};
+const {name: uname, age} = user
+
+console.log(name) // 小明
+console.log(age) // 18
+```
+
+* 数组对象解构
+```
+const pig = [
+	{
+		name: '佩奇'，
+		age: 6
+	}
+]
+const [{name, age}] = pig
+console.log(name,age)
 ```
