@@ -110,3 +110,110 @@ console.log(reg.test(str))
 ```
 字符串.replace(/正则表达式/, 替换的文本)
 ```
+
+
+# js进阶
+## 函数进阶
+### 不定数量形参
+#### 动态参数
+arguments 是函数内部内置的伪数组变量，它包含了调用函数时传入的所有实参
+```
+function sum() {
+  let s = 0
+  for(let i = 0; i < arguments.length; i++) {
+    s += arguments[i]
+  }
+  console.log(s)
+}
+sum(5,10)
+sum(1,2,4)
+```
+
+1. arguments 是一个伪数组，只存在于函数中
+2. arguments 的作用是动态获取函数的实参
+3. 可以通过for循环依次得到传递过来的实参
+
+#### 剩余参数
+剩余参数允许我们将一个不定数量的参数表示为一个数组
+```
+function config(baseURL, ...other) {
+  console.log(baseURL)
+  console.log(other)
+}
+config('http://baidu.com', 'get', 'json')
+```
+
+1. `...` 是语法符号，置于最末函数形参之前，用于获取多余的实参
+2. 借助 `...` 获取的剩余实参，是个真数组
+
+### 展开运算符
+展开运算符`...`,将一个数组进行展开，不会修改原数组
+```
+const arr = [1,2,3,4,5]
+console.log(...arr) // 1 2 3 4 5
+```
+
+
+### 箭头函数
+类似java的拉姆达表达式
+```
+const fn = () => {
+  console.log()
+}
+```
+
+形参放在小括号处
+形参只有一个，小括号可省略
+只有一行代码的时候，我们可以省略大括号和return语句
+```
+const fn = x => x + x
+console.log(fn(1)) // 值为2
+```
+
+箭头函数可以直接返回一个对象
+```
+const fn = (uname) => ({uname: uname})
+fn('刘德华')
+```
+
+***箭头函数没有argumrnts动态参数，但是有剩余参数`...args`***
+***箭头函数不会创建自己的this，它只会从自己的作用域的上一层沿用this***
+
+### 数组解构
+基本语法：
+1. 赋值运算符 = 左侧的 [] 用于批量声明变量，右侧数组的单元值将被赋值给左侧的变量
+2. 变量的顺序对应数组单元值的位置依次进行赋值操作
+
+```
+const arr = [1,2,3]
+const [a,b,c] = arr
+console.log(a)
+console.log(b)
+console.log(c)
+```
+或者
+```
+const [a,b,c] = [1,2,3]
+console.log(a)
+console.log(b)
+console.log(c)
+```
+
+基本语法：
+3. 交互2个变量
+```
+let c = 1
+let d = 3; //这里必须有分号
+[b, a] = [c, d]
+console.log(a)
+console.log(b)
+```
+
+注意： js 前面必须加分号情况
+1. 立即执行函数
+	```
+	(function t() { })();
+	// 或者
+	;(function t() { })()
+	```
+2. 数组解构
