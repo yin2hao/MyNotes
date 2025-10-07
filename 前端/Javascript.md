@@ -207,7 +207,7 @@ console.log(b) // 苹果
 console.log(c) // 华为
 console.log(d) // undefined
 ```
-3. 交互2个变量   
+3. 交换2个变量   
 ```
 let c = 1
 let d = 3; //这里必须有分号
@@ -217,10 +217,44 @@ console.log(b)
 ```
 
 **注意**：js 前面必须加分号情况
-1. 立即执行函数
-	```
-	(function t() { })();
-	// 或者
-	;(function t() { })()
-	```
-2. 数组解构
+* 立即执行函数
+```
+(function t() { })();
+// 或者
+;(function t() { })()
+```
+* 数组解构
+	如上
+3. 利用剩余参数解决变量少，单元值多的情况
+```
+const [a, b, ...tel] = ['小米', '华为', '苹果', '格力', 'vivo']
+console.log(a) // 小米
+console.log(b) // 苹华为
+console.log(tel) // ['苹果', '苹果', '格力', 'vivo']
+```
+剩余参数返回的还是一个数组
+4. 防止有undefined传递单元值的情况，可以设置默认值：
+```
+const [a = '手机'， b = '华为'] = ['小米']
+console.log(a) // 小米
+console.log(b) // 华为
+```
+允许初始化变量的默认值，且只有单元值为 undefined 时默认值才会生效
+
+5. 按需导入，忽略某些返回值
+```
+const [a, , c, d] = ['小米', '苹果', '华为', '格力']
+console.log(a) // 小米
+console.log(c) // 华为
+console.log(d) //格力
+```
+
+6. 支持多维数组的结构：
+```
+const [a,b] = ['苹果'， ['小米','华为']]
+console.log(a) // 苹果
+console.log(b) // ['小米','华为']
+```
+```
+
+```
