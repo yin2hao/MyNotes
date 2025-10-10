@@ -303,4 +303,13 @@ const pig = [
 ]
 const [{name, age}] = pig
 console.log(name,age)
+<<<<<<< HEAD
 ```
+=======
+```
+
+this is pull test text
+
+
+
+>>>>>>> mynotes/master
