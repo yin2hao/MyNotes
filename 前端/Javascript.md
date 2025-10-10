@@ -304,3 +304,5 @@ const pig = [
 const [{name, age}] = pig
 console.log(name,age)
 ```
+
+this is pull test text
