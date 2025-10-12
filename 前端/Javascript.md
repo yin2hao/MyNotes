@@ -304,5 +304,22 @@ const pig = [
 const [{name, age}] = pig
 console.log(name,age)
 ```
+* 多级对象解构
+```
+const pig = {
+	name:'佩奇',
+	family:{
+		mother:'猪妈妈',
+		father:'猪爸爸',
+		sister:'乔治'
+	},
+	age:6
+}
 
+const { name,family:{mother,father,sister}} = pig
+console.log(name) // 佩奇
+console.log(mother) // 猪爸爸
+console.log(father) // 猪妈妈
+console.log(sister) // 乔治
+```
 
