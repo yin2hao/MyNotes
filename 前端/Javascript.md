@@ -323,3 +323,18 @@ console.log(father) // 猪妈妈
 console.log(sister) // 乔治
 ```
 
+## forEach()方法
+forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数
+主要使用场景： 遍历数组的每个元素
+语法：
+```
+被遍历的数组.forEach(function(当前数组元素， 当前元素索引号){
+	函数体
+})
+```
+
+具体例子：
+```
+const arr = ['pink','red','green']
+arr.forEach(function (item, ))
+```
