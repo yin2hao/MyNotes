@@ -332,9 +332,15 @@ forEach() 方法用于调用数组的每个元素，并将元素传递给回调�
 	函数体
 })
 ```
+**注意：**
+1. forEach 主要是遍历数组
+2. 参数当前数组元素是必须要写的，索引号可选
 
 具体例子：
 ```
 const arr = ['pink','red','green']
-arr.forEach(function (item, ))
+arr.forEach(function (item, index) {
+	console.log(`当前数组元素是：${item}`)
+	console.log(`当前数组元素的索引是：${index}`)
+})
 ```
