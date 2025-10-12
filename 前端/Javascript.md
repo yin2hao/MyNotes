@@ -344,3 +344,28 @@ arr.forEach(function (item, index) {
 	console.log(`当前数组元素的索引是：${index}`)
 })
 ```
+
+## filter()方法
+filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素
+主要使用场景： 筛选数组符合条件的元素，并返回筛选之后元素的新数组
+语法：
+```
+被遍历的数组.filter(function(currentValue, index) {
+	return 筛选条件
+})
+```
+
+注意：
+1. filter() 筛选数组
+2. 返回值：返回数组，包含了符合条件的所有元素。如果没有符合条件的元素则返回空数组
+3. 参数：currentValue 必须写， index 可选
+4. 因为返回新数组，所以不会影响原数组
+
+具体例子：
+```
+const score = [10,50,3,40,33]
+const re = score.filter(function(item) {
+	returm item > 30
+})
+console.log(re)
+```
