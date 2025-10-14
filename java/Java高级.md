@@ -120,6 +120,20 @@ JDK 5以后，一般使用Scanner方法读取输入
 
 ## File
 
+### 构造方法
+主要使用
+File file = new File(path);
+
+
+重要注意事项
+1. 平台差异：
+- Windows 使用  \  作为路径分隔符
+- Unix/Linux 使用  /  作为路径分隔符
+- 建议使用  File.separator  或  Path  API 处理跨平台问题
+​
+2. 路径有效性：
+- 构造 File 对象不会检查路径是否存在
+- 需要时使用  exists() 、 isFile() 、 isDirectory()  等方法检查
 
 
 ## 字符集
@@ -131,5 +145,3 @@ JDK 5以后，一般使用Scanner方法读取输入
 ## 线程安全
 
 ## 线程池
-
-[^1]: 
