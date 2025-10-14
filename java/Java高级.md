@@ -14,7 +14,7 @@
 使用try…catch语句捕获异常
 
 抛出异常后程序会继续运行，不会提出
-## 自定义异常
+### 自定义异常
 
 ## 泛型
 ### 泛型方法
@@ -44,15 +44,25 @@ public static <T> void test(T t) {
 
 `public <T> void Test(List<T> sss)`和`public void getData(List<?> sss)`的区别
 `public <T> void Test(List<T> sss)`：确定的数据类型，可以增删改查，不作限制
-`public void getData(List<?> sss)`：不确定的类型，为了安全考虑，不能增加，只能读取，且读取出来的对象类型为Obj
+`public void getData(List<?> sss)`：不确定的类型，为了安全考虑，不能增加，只能读取，且读取出来的对象类型为Object
 
-## Collection
+## 集合
+* `Collection`代表单列集合，每个元素（数据）只包含一个值
+* `Map`代表双列集合，每个元素包含两个值（键值对）
+### Collection
+Collection集合特点
+* List系列集合：添加的元素是有序，可重复，有索引
+	* ArrayList、LinkedList：有序、可重复、有索引
+* Set系列集合：添加的元素是无序、不重复、无索引
+	* HashSet：无序、不重复、五索引
+	* LinkedHashSet：有序、不重复、无索引
+	* TreeSet：按照大小默认升序排序、不重复、无索引
+
+### Map
 
 ## List
 
 ## Set
-
-## Map
 
 ## Stream流
 
