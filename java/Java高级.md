@@ -16,7 +16,8 @@
 抛出异常后程序会继续运行，不会提出
 ## 自定义异常
 
-#### 泛型方法
+## 泛型
+### 泛型方法
 语法：
 ```
 修饰符 <类型变量, 类型变量, ...> 返回值类型 方法名(形参列表){
@@ -29,11 +30,21 @@ public static <T> void test(T t) {
 }
 ```
 
-通配符：就是"?" ，可以在“使用泛型”的时候代表一切类型；E T K V 是在定义泛型的时候使用。
+通配符：
+就是"?" ，可以在“使用泛型”的时候代表一切类型；E T K V 是在定义泛型的时候使用。
+- **E** - Element (在集合中使用，因为集合中存放的是元素)
+- **T** - Type（Java 类）
+- **K** - Key（键）
+- **V** - Value（值）
+- **N** - Number（数值类型）
+- **？** - 表示不确定的 java 类型
 泛型的上下限：
 * 泛型上限：`?extend Car`：?能接收的必须是Car或者其子类
 * 泛型下限：`?super Car`：?能接收的必须是Car或者其父类
-## 泛型
+
+`public <T> void Test(List<T> sss)`和`public void getData(List<?> sss)`的区别
+`public <T> void Test(List<T> sss)`：确定的数据类型，可以增删改查，不作限制
+`public void getData(List<?> sss)`：不确定的类型，为了安全考虑，不能增加，只能读取，且读取出来的对象类型为Obj
 
 ## Collection
 
@@ -48,6 +59,24 @@ public static <T> void test(T t) {
 ![img](https://www.runoob.com/wp-content/uploads/2013/12/iostream2xx.png)
 图片来自菜鸟教程
 ### 字符流
+
+| 类名                 | 类型        | 描述                                   |
+| ------------------ | --------- | ------------------------------------ |
+| `Reader`           | 抽象类 (输入流) | 所有字符输入流的超类，处理字符的输入操作。                |
+| `Writer`           | 抽象类 (输出流) | 所有字符输出流的超类，处理字符的输出操作。                |
+| `FileReader`       | 输入流       | 从文件中读取字符数据。                          |
+| `FileWriter`       | 输出流       | 将字符数据写入文件。                           |
+| `BufferedReader`   | 输入流       | 为字符输入流提供缓冲功能，支持按行读取，提高读取效率。          |
+| `BufferedWriter`   | 输出流       | 为字符输出流提供缓冲功能，支持按行写入，提高写入效率。          |
+| `CharArrayReader`  | 输入流       | 将字符数组作为输入源。                          |
+| `CharArrayWriter`  | 输出流       | 将数据写入到字符数组。                          |
+| `StringReader`     | 输入流       | 将字符串作为输入源。                           |
+| `StringWriter`     | 输出流       | 将数据写入到字符串缓冲区。                        |
+| `PrintWriter`      | 输出流       | 便捷的字符输出流，支持自动刷新和格式化输出。               |
+| `PipedReader`      | 输入流       | 用于在管道中读取字符数据，通常与 `PipedWriter` 配合使用。 |
+| `PipedWriter`      | 输出流       | 用于在管道中写入字符数据，通常与 `PipedReader` 配合使用。 |
+| `LineNumberReader` | 输入流       | 带行号的缓冲字符输入流，允许跟踪读取的行号。               |
+| `PushbackReader`   | 输入流       | 允许在读取字符后将字符推回流中，以便再次读取。              |
 使用`BufferedReader`方法读取字符
 ```
 // 读取单个字符
@@ -56,7 +85,7 @@ BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 c = (char) br.read();
 ```
 
-现在，一般使用Scanner方法读取输入
+JDK 5以后，一般使用Scanner方法读取输入
 ### 字节流
 
 | 类名                      | 类型        | 描述                                                |
@@ -80,6 +109,8 @@ c = (char) br.read();
 | `SequenceInputStream`   | 输入流       | 将多个输入流串联为一个输入流进行处理。                               |
 
 ## File
+
+
 
 ## 字符集
 
