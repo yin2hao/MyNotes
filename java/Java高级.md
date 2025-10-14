@@ -45,9 +45,39 @@ public static <T> void test(T t) {
 
 ## Stream流
 
+![img](https://www.runoob.com/wp-content/uploads/2013/12/iostream2xx.png)
+图片来自菜鸟教程
 ### 字符流
-使用`BufferedReader```
+使用`BufferedReader`方法读取字符
+```
+// 读取单个字符
+char c;
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+c = (char) br.read();
+```
+
+现在，一般使用Scanner方法读取输入
 ### 字节流
+
+| 类名                      | 类型        | 描述                                                |
+| ----------------------- | --------- | ------------------------------------------------- |
+| `InputStream`           | 抽象类 (输入流) | 所有字节输入流的超类，处理字节的输入操作。                             |
+| `OutputStream`          | 抽象类 (输出流) | 所有字节输出流的超类，处理字节的输出操作。                             |
+| `FileInputStream`       | 输入流       | 从文件中读取字节数据。                                       |
+| `FileOutputStream`      | 输出流       | 将字节数据写入文件。                                        |
+| `BufferedInputStream`   | 输入流       | 为字节输入流提供缓冲功能，提高读取效率。                              |
+| `BufferedOutputStream`  | 输出流       | 为字节输出流提供缓冲功能，提高写入效率。                              |
+| `ByteArrayInputStream`  | 输入流       | 将内存中的字节数组作为输入源。                                   |
+| `ByteArrayOutputStream` | 输出流       | 将数据写入到内存中的字节数组。                                   |
+| `DataInputStream`       | 输入流       | 允许从输入流中读取 Java 原生数据类型（如 `int`、`float`、`boolean`）。 |
+| `DataOutputStream`      | 输出流       | 允许向输出流中写入 Java 原生数据类型。                            |
+| `ObjectInputStream`     | 输入流       | 从输入流中读取序列化对象。                                     |
+| `ObjectOutputStream`    | 输出流       | 将对象序列化并写入输出流中。                                    |
+| `PipedInputStream`      | 输入流       | 用于在管道中读取字节数据，通常与 `PipedOutputStream` 配合使用。        |
+| `PipedOutputStream`     | 输出流       | 用于在管道中写入字节数据，通常与 `PipedInputStream` 配合使用。         |
+| `FilterInputStream`     | 输入流       | 字节输入流的包装类，用于对其他输入流进行过滤处理。                         |
+| `FilterOutputStream`    | 输出流       | 字节输出流的包装类，用于对其他输出流进行过滤处理。                         |
+| `SequenceInputStream`   | 输入流       | 将多个输入流串联为一个输入流进行处理。                               |
 
 ## File
 
@@ -61,3 +91,4 @@ public static <T> void test(T t) {
 
 ## 线程池
 
+[^1]: 
