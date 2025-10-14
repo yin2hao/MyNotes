@@ -45,6 +45,10 @@ public static <T> void test(T t) {
 
 ## Stream流
 
+### 字符流
+使用`BufferedReader```
+### 字节流
+
 ## File
 
 ## 字符集
