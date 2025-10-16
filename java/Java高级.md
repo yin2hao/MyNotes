@@ -58,7 +58,7 @@ Collection集合特点
 	* LinkedHashSet：有序、不重复、无索引
 	* TreeSet：按照大小默认升序排序、不重复、无索引
 #### Collection遍历方式
-方法1：
+方法1：迭代器
 ```
 Iterator<String> it = lists.iterator();
 while (it.hasNext()){
@@ -78,12 +78,17 @@ for (元素的数据类型 变量名 : 数组或者集合) {
 ```
 default void foreach(Consumer<? super T> action)
 ```
+
+**注意：
+三种方法都不能直接解决多并发问题
+增强 for 循环/ Lambda 遍历均不能解决并发修改异常问题，因此增它们只适合做数据的遍历，不适合同时做增删操作。**
+
+#### List
+
+#### Set
+
+
 ### Map
-
-## List
-
-## Set
-
 ## Stream流
 
 ![img](https://www.runoob.com/wp-content/uploads/2013/12/iostream2xx.png)
