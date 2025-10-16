@@ -57,7 +57,27 @@ Collection集合特点
 	* HashSet：无序、不重复、五索引
 	* LinkedHashSet：有序、不重复、无索引
 	* TreeSet：按照大小默认升序排序、不重复、无索引
+#### Collection遍历方式
+方法1：
+```
+Iterator<String> it = lists.iterator();
+while (it.hasNext()){
+	String ele = it.next;
+}
+```
 
+方法2：增强for循环
+```
+for (元素的数据类型 变量名 : 数组或者集合) {
+
+}
+```
+
+方法三：Lambda表达式
+得益于 JDK8 开始的新技术 Lambda 表达式，提供了一种更简单、更直接的方式来遍历集合
+```
+default void foreach(Consumer<? super T> action)
+```
 ### Map
 
 ## List
